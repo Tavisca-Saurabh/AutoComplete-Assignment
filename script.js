@@ -54,24 +54,24 @@ function AutoComplete() { //AutoComplete Search Bar
     }
 }
 InputValue.addEventListener('keydown', function (event) {
-    var key = event.key;
+    var key = event.keyCode;
     var x = document.getElementById("autocomplete-list");
     if (x) x = x.getElementsByTagName("div");
-    if (key === "Backspace") {
+    if (key === 8) {
         RemoveList();
-    } else if (key == "ArrowDown") {
+    } else if (key == 40) {
         if (Focus < x.length) {
             Focus++;
             addActive(x);
             document.getElementById("autocomplete-list").scrollBy(0, 39);
         }
-    } else if (key == "ArrowUp") {
+    } else if (key == 38) {
         if (Focus != 0) {
             Focus--;
             addActive(x);
             document.getElementById("autocomplete-list").scrollBy(0, -39);
         }
-    } else if (event.keyCode == 13) {
+    } else if (key == 13) {
         console.log("enter");
         event.preventDefault();
         if (Focus > -1) {
