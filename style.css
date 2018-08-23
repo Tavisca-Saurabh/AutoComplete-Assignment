@@ -28,7 +28,7 @@ form {
 
 .autocomplete-items {
     border: 1px solid lightblue;
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 12em;
     overflow-x: hidden;
     width: 156%;
@@ -65,4 +65,10 @@ form {
 
 input[type=text]::-ms-clear {
     display: none;
+}
+
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
 }
