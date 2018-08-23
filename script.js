@@ -1,14 +1,14 @@
 var Names = ["Ragul", "Rajpreet", "Pallvi", "Neha", "Ankita", "Raja", "Shreea", "Smriti", "Shrijeet", "Ayush", "Swapnil", "Nihit", "Bhargavi", "Anushka", "Swinal", "Utkarsh", "Saurabh", "Paarth", "Vishwas", "Mohit", "Gurbaksh", "Ashwarya"];
 Names.sort();
-var InputValue = document.getElementById("myInput")
-var IsTrue = false,Count = 0;
+var InputValue = document.getElementById("myInput");
+var IsTrue = false;
 InputValue.addEventListener("input", function () {
     Count = 0;
     IsTrue = false;
     var val = this.value;
-    if (!val) {
-        return false;
-        RemoveList();
+    document.getElementById("cross").style.visibility="visible";
+    if(!val){
+       document.getElementById("cross").style.visibility="hidden"; 
     }
     RemoveList();
     a = document.createElement("DIV");
@@ -28,10 +28,7 @@ InputValue.addEventListener("input", function () {
                     InputValue.value = this.getElementsByTagName("input")[0].value;
                     RemoveList();
                 });
-                Count++;
-                if (Count <= 5) {
                     a.appendChild(b);
-                }
                 IsTrue = true;
                 break;
             }
@@ -48,7 +45,6 @@ InputValue.addEventListener('keydown', function (event) {
     var key = event.key;
     if (key === "Backspace") {
         RemoveList();
-        return false;
     }
 });
 
@@ -57,4 +53,8 @@ function RemoveList() {
     for (var i = 0; i < CurrentList.length; i++) {
         CurrentList[i].parentNode.removeChild(CurrentList[i]);
     }
+}
+function Clear(){
+    InputValue.value=" ";
+    document.getElementById("cross").style.visibility="hidden"; 
 }

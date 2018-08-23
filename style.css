@@ -27,7 +27,11 @@ form {
 }
 
 .autocomplete-items {
-    border: 1px solid #d4d4d4;
+    border: 1px solid lightblue;
+    overflow-y: scroll;
+    max-height: 12em;
+    overflow-x: hidden;
+    width: 156%;
 }
 
 .autocomplete-items div {
@@ -35,8 +39,30 @@ form {
     cursor: pointer;
     background-color: #fff;
     border-bottom: 1px solid #d4d4d4;
-    width: 152%;
+
 }
+
 .autocomplete-items div:hover {
-  background-color: #e9e9e9; 
+    background-color: #e9e9e9;
+}
+
+/*Cross Sign */
+
+.clear {
+    font-weight: bold;
+    position: absolute;
+    right: 685px;
+    bottom: 53%;
+    background: none;
+    border: none;
+    color: black;
+    visibility: hidden;
+    cursor: pointer;
+
+}
+
+/*For Hiding Cross Sign of Edge Browser*/
+
+input[type=text]::-ms-clear {
+    display: none;
 }
